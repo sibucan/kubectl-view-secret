@@ -82,6 +82,8 @@ func NewCmdViewSecret() *cobra.Command {
 	cmd.Flags().StringVarP(&res.customNamespace, "namespace", "n", res.customNamespace, "override the namespace defined in the current context")
 	cmd.Flags().StringVarP(&res.customContext, "context", "c", res.customContext, "override the current context")
 
+	cmd.AddCommand(NewCmdCompletion())
+
 	return cmd
 }
 
